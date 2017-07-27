@@ -1,7 +1,7 @@
 node{
   stage('checkout'){
 	checkout scm
-sh 'echo $pwd'
+sh 'pwd'
   } 
 
   stage('Build') {
