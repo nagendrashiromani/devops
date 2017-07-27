@@ -1,5 +1,9 @@
 node{
-   stage('Build') {
+  stage('checkout'){
+	checkout scm
+  } 
+
+  stage('Build') {
      mvnHome = tool 'M3' 
      // Run the maven build
       if (isUnix()) {
