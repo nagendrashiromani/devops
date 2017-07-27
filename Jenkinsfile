@@ -1,8 +1,12 @@
 node{
   stage('checkout'){
 	checkout scm
-sh 'pwd'
   } 
+ stage('set-env'){
+    env.JAVA_HOME="${tool 'JDK-1.8'}"
+    env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+    sh 'java -version'
+}
 
   stage('Build') {
      mvnHome = tool 'M3' 
