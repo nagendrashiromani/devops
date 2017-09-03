@@ -1,4 +1,3 @@
-//Test comment
 node{
   stage('checkout'){
 	checkout scm
