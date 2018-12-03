@@ -2,7 +2,7 @@
 // One more test line
 node{
   stage('checkout'){
-	checkout([$class: 'GitSCM', branches: scm.branches, doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations, extensions: scm.extensions + [[$class: 'MessageExclusion', excludedMessage: '(?s).*test commit.*']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c2f2562c-e361-489c-a080-366cc2a90eec', url: 'https://github.com/nagendrashiromani/devops.git']]])
+	checkout([$class: 'GitSCM', branches: scm.branches, doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations, extensions: scm.extensions + [[$class: 'MessageExclusion', excludedMessage: '.*shiromani.*']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c2f2562c-e361-489c-a080-366cc2a90eec', url: 'https://github.com/nagendrashiromani/devops.git']]])
   } 
  stage('set-env'){
     env.JAVA_HOME="${tool 'JDK-1.8'}"
