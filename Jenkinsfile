@@ -2,7 +2,7 @@
 // One more test line
 node{
   stage('checkout'){
-	checkout scm
+	checkout([$class: 'GitSCM', branches: scm.branches, doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations, extensions: scm.extensions + [[$class: 'MessageExclusion', excludedMessage: '(?s).*test commit.*']]])
   } 
  stage('set-env'){
     env.JAVA_HOME="${tool 'JDK-1.8'}"
