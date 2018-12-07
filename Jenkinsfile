@@ -12,7 +12,7 @@ node{
   stage('checkout'){
 	//checkout([$class: 'GitSCM', branches: scm.branches, doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations, extensions: scm.extensions + [[$class: 'MessageExclusion', excludedMessage: '.*shiromani.*']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c2f2562c-e361-489c-a080-366cc2a90eec', url: 'https://github.com/nagendrashiromani/devops.git']]])
 	checkout scm
-	if (lastCommitIsBumpCommit()) {
+	if (lastCommitIsVersionCommit()) {
         currentBuild.result = 'ABORTED'
         error('Last commit bumped the version, aborting the build to prevent a loop.')
     } else {
