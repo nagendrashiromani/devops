@@ -8,7 +8,6 @@
     <version>2.0</version>
     <name>Vaadin Addressbook example</name>
 	<!-- test comment is added-->
-	<!-- test comment is added-->
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
