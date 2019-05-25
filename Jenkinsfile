@@ -1,3 +1,12 @@
+import org.jenkinsci.plugins.workflow.job.WorkflowJob
+
+Jenkins.instance.getAllItems(WorkflowJob.class).each {
+  	println(it.fullName)
+  it._getRuns().each{ buildLog ->
+      println(buildLog.getDisplayName()+" :: "+buildLog.getLogText().length())
+  }
+};
+
 // testuing testing
 // One more test line
 node{
